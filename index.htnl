@@ -1,0 +1,83 @@
+<!-- ========================================
+CLASS BARBER - OFFICIAL WEBSITE (HTML + CSS)
+Designed & Coded by AT (Akash)
+Free hosting compatible with GitHub Pages
+======================================== -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Class Barber Plymouth – Men’s haircut, skin fade, beard trim, hot towel shave, student discounts, and free drinks offer.">
+    <meta name="keywords" content="Class Barber, barber Plymouth, haircut, beard trim, skin fade, men's haircut, student discount, free drinks, Plymouth North Hill">
+    <title>Class Barber | Plymouth</title>
+    <style>
+        body { margin: 0; font-family: 'Poppins', sans-serif; background: #fdfdfd; color: #222; }
+        header { background: #111; text-align: center; padding: 40px 20px; color: white; }
+        header h1 { color: #c52b2b; font-size: 2.5rem; letter-spacing: 2px; }
+        header h2 { color: #c52b2b; font-size: 1.5rem; margin-top: 10px; }
+        .line { width: 80px; height: 2px; background: #c52b2b; margin: 10px auto; }
+        .hero { text-align: center; padding: 30px 20px; background: #f5f5f5; }
+        .hero h3 { font-size: 1.3rem; }
+        .offers { text-align: center; background: #c52b2b; color: white; padding: 20px; font-size: 1.1rem; }
+        .offers span { display: block; margin-top: 5px; }
+        .buttons { display: flex; justify-content: center; gap: 15px; margin: 20px 0; }
+        .btn { background: #111; color: white; padding: 12px 20px; border: none; border-radius: 8px; text-decoration: none; transition: 0.3s; }
+        .btn:hover { background: #c52b2b; }
+        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 10px; padding: 20px; }
+        .gallery img { width: 100%; border-radius: 10px; }
+        .map { text-align: center; margin: 30px 0; }
+        iframe { width: 90%; height: 300px; border: none; border-radius: 10px; }
+        footer { background: #111; color: #ccc; text-align: center; padding: 20px; font-size: 0.9rem; }
+        .socials { margin: 15px 0; }
+        .socials a { color: white; margin: 0 10px; text-decoration: none; }
+        .stars { color: gold; margin-top: 10px; }
+        @media(max-width:600px){ header h1{font-size:2rem;} }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>CLASS BARBER</h1>
+    <div class="line"></div>
+    <h2>Professional Service · Plymouth</h2>
+</header>
+
+<section class="hero">
+    <h3>Walk-in Haircuts | Student Discounts | Loyalty Cards Available</h3>
+    <div class="stars">★★★★★ 5-Star Rated</div>
+    <div class="buttons">
+        <a href="tel:+447899772323" class="btn">📞 Call Now</a>
+        <a href="https://maps.app.goo.gl/aQ2LMBBqchMVTLkMA" target="_blank" class="btn">📍 Get Directions</a>
+    </div>
+</section>
+
+<section class="offers">
+    <span>🎓 Student Discount Available</span>
+    <span>☕ Free Drinks for Customers</span>
+    <span>🅿️ Free Parking up to 2 Hours Nearby</span>
+</section>
+
+<section class="gallery">
+    <img src="https://images.unsplash.com/photo-1621605815972-697aa59e8c19" alt="Haircut">
+    <img src="https://images.unsplash.com/photo-1605732446800-3c0b2b74f08b" alt="Barber Fade">
+    <img src="https://images.unsplash.com/photo-1600180758890-6fef1f2f03b0" alt="Beard Trim">
+    <img src="https://images.unsplash.com/photo-1595428774229-efcbf2e197d3" alt="Hair Style">
+    <img src="https://images.unsplash.com/photo-1573497019410-5c009b3d77b4" alt="Hot Towel Shave">
+    <img src="https://images.unsplash.com/photo-1622227922682-6b7b7a6722a4" alt="Barber Chair">
+</section>
+
+<section class="map">
+    <iframe src="https://www.google.com/maps/embed?pb=!4v1727800000000!6m8!1m7!1sCAoSLEFGMVFpcE1MdjMyZ1BBeDNhTUVuUkFHRGRJc1ZXdHdlZFFXQnMwVUlIU3hH!2m2!1d50.3778!2d-4.1427!3f0!4f0!5f0.7820865974627469" allowfullscreen></iframe>
+</section>
+
+<footer>
+    <div class="socials">
+        <a href="https://www.facebook.com/classbarber38" target="_blank">📘 Facebook</a>
+        <a href="https://www.instagram.com/classbarber_38" target="_blank">📸 Instagram</a>
+    </div>
+    <p>© 2025 Class Barber | Created by AT</p>
+</footer>
+
+</body>
+</html>
