@@ -1,83 +1,211 @@
-<!-- ========================================
-CLASS BARBER - OFFICIAL WEBSITE (HTML + CSS)
-Designed & Coded by AT (Akash)
-Free hosting compatible with GitHub Pages
-======================================== -->
-<!DOCTYPE html>
+<!--
+Class Barber - Single Page Website (HTML + CSS)
+Created for GitHub Pages (static, always-on)
+Theme: Green (#4C7445), Cream (#F6F0E1), Gold (#D4AF37)
+Placeholder images are used from Unsplash and can be replaced in /assets/ folder.
+
+Files:
+- index.html  (this file)
+- assets/ (optional) - add your own images here and update <img> src accordingly
+
+Deployment (quick):
+1. Create a new GitHub repository (e.g. classbarber38.github.io or any name).
+2. Upload index.html to the repository root.
+3. On GitHub, go to Settings -> Pages -> Deploy from branch -> select 'main' (or 'master') and root (/).
+4. Wait a minute — your site will be live at https://<your-username>.github.io/<repo-name>/ (or https://<your-username>.github.io if repo named username.github.io).
+
+Editing later: simply edit index.html in the repo and commit changes — GitHub Pages will auto-deploy.
+
+Replaceable fields (search inside file): PHONE_NUMBER, MAP_LINK, FACEBOOK_LINK, OWNER_NAME
+-->
+
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Class Barber Plymouth – Men’s haircut, skin fade, beard trim, hot towel shave, student discounts, and free drinks offer.">
-    <meta name="keywords" content="Class Barber, barber Plymouth, haircut, beard trim, skin fade, men's haircut, student discount, free drinks, Plymouth North Hill">
-    <title>Class Barber | Plymouth</title>
-    <style>
-        body { margin: 0; font-family: 'Poppins', sans-serif; background: #fdfdfd; color: #222; }
-        header { background: #111; text-align: center; padding: 40px 20px; color: white; }
-        header h1 { color: #c52b2b; font-size: 2.5rem; letter-spacing: 2px; }
-        header h2 { color: #c52b2b; font-size: 1.5rem; margin-top: 10px; }
-        .line { width: 80px; height: 2px; background: #c52b2b; margin: 10px auto; }
-        .hero { text-align: center; padding: 30px 20px; background: #f5f5f5; }
-        .hero h3 { font-size: 1.3rem; }
-        .offers { text-align: center; background: #c52b2b; color: white; padding: 20px; font-size: 1.1rem; }
-        .offers span { display: block; margin-top: 5px; }
-        .buttons { display: flex; justify-content: center; gap: 15px; margin: 20px 0; }
-        .btn { background: #111; color: white; padding: 12px 20px; border: none; border-radius: 8px; text-decoration: none; transition: 0.3s; }
-        .btn:hover { background: #c52b2b; }
-        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 10px; padding: 20px; }
-        .gallery img { width: 100%; border-radius: 10px; }
-        .map { text-align: center; margin: 30px 0; }
-        iframe { width: 90%; height: 300px; border: none; border-radius: 10px; }
-        footer { background: #111; color: #ccc; text-align: center; padding: 20px; font-size: 0.9rem; }
-        .socials { margin: 15px 0; }
-        .socials a { color: white; margin: 0 10px; text-decoration: none; }
-        .stars { color: gold; margin-top: 10px; }
-        @media(max-width:600px){ header h1{font-size:2rem;} }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Class Barber • Plymouth</title>
+  <meta name="description" content="Class Barber - Professional men's haircuts, skin fades, beard shape-up, hot towel shave. 38 North Hill, Plymouth.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --green:#4C7445;
+      --cream:#F6F0E1;
+      --gold:#D4AF37;
+      --dark:#2b2b2b;
+      --max-width:1100px;
+    }
+    *{box-sizing:border-box}
+    body{font-family:Montserrat,system-ui,Arial,sans-serif;margin:0;color:var(--dark);background:linear-gradient(180deg,var(--cream) 0%, #fff 100%)}
+    .container{max-width:var(--max-width);margin:0 auto;padding:20px}
+
+    /* Header */
+    header{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{background:var(--green);color:var(--cream);padding:8px 14px;border-radius:6px;display:inline-block;font-family:Playfair Display,serif;font-size:22px;letter-spacing:2px}
+    .tag{font-size:12px;color:#555}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 360px;gap:24px;align-items:center;margin:18px 0}
+    .hero-card{background:linear-gradient(180deg,#ffffff 0%,var(--cream) 100%);padding:28px;border-radius:10px;box-shadow:0 6px 20px rgba(0,0,0,0.08)}
+    .hero h1{margin:0 0 8px;font-family:Playfair Display,serif;font-size:34px;color:var(--green)}
+    .hero p{margin:0 0 16px;color:#333}
+    .cta-row{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{display:inline-block;padding:12px 16px;border-radius:8px;text-decoration:none;font-weight:700}
+    .btn-primary{background:var(--dark);color:#fff}
+    .btn-ghost{background:transparent;border:2px solid var(--dark);color:var(--dark)}
+
+    /* Info card */
+    .info{background:var(--green);color:var(--cream);padding:18px;border-radius:10px;text-align:center}
+    .info h3{margin:0;font-size:20px}
+    .info p{margin:6px 0 0;font-size:14px}
+
+    /* Services */
+    .services{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin:20px 0}
+    .service{background:#fff;padding:16px;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.06)}
+    .service h4{margin:0 0 8px}
+    .service p{margin:0;color:#666;font-size:14px}
+
+    /* Gallery */
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:20px 0}
+    .gallery img{width:100%;height:120px;object-fit:cover;border-radius:6px}
+
+    /* Reviews & contact */
+    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:20px 0}
+    .reviews{background:#fff;padding:16px;border-radius:8px}
+    .review{border-left:4px solid var(--gold);padding:8px 12px;margin-bottom:10px}
+    .contact{background:linear-gradient(180deg,var(--cream),#fff);padding:16px;border-radius:8px}
+    .contact a{display:inline-block;margin-top:8px}
+
+    footer{margin:20px 0;text-align:center;color:#555;font-size:13px}
+
+    /* Responsive */
+    @media(max-width:900px){
+      .hero{grid-template-columns:1fr}
+      .gallery{grid-template-columns:repeat(2,1fr)}
+      .two-col{grid-template-columns:1fr}
+    }
+    @media(max-width:520px){
+      .gallery img{height:100px}
+      .logo{font-size:18px}
+      .hero h1{font-size:28px}
+    }
+  </style>
 </head>
 <body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">CLASS<br>BARBER</div>
+        <div>
+          <div class="tag">Professional Service • 38 North Hill, Plymouth</div>
+        </div>
+      </div>
+      <div style="text-align:right">
+        <div style="font-weight:700">Call</div>
+        <div style="margin-top:6px;font-size:14px"><a class="btn btn-primary" href="tel:+447899772323">07899 772323</a></div>
+      </div>
+    </header>
 
-<header>
-    <h1>CLASS BARBER</h1>
-    <div class="line"></div>
-    <h2>Professional Service · Plymouth</h2>
-</header>
+    <section class="hero">
+      <div class="hero-card">
+        <h1>Your Style, Our Skill</h1>
+        <p>Fully qualified barbers specialising in men's haircuts, skin fades, hot towel shaves, beard shaping and kids' cuts. Friendly service and professional finish.</p>
 
-<section class="hero">
-    <h3>Walk-in Haircuts | Student Discounts | Loyalty Cards Available</h3>
-    <div class="stars">★★★★★ 5-Star Rated</div>
-    <div class="buttons">
-        <a href="tel:+447899772323" class="btn">📞 Call Now</a>
-        <a href="https://maps.app.goo.gl/aQ2LMBBqchMVTLkMA" target="_blank" class="btn">📍 Get Directions</a>
-    </div>
-</section>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="tel:+447899772323">Call</a>
+          <a class="btn btn-ghost" href="https://maps.app.goo.gl/aQ2LMBBqchMVTLkMA" target="_blank" rel="noopener">Get Directions</a>
+          <a class="btn" style="background:var(--gold);color:#fff;text-decoration:none" href="https://www.facebook.com/classbarber38" target="_blank" rel="noopener">Facebook</a>
+          <a class="btn" style="background:#E1306C;color:#fff;text-decoration:none" href="https://www.instagram.com/classbarber_38" target="_blank" rel="noopener">Instagram</a>
+        </div>
 
-<section class="offers">
-    <span>🎓 Student Discount Available</span>
-    <span>☕ Free Drinks for Customers</span>
-    <span>🅿️ Free Parking up to 2 Hours Nearby</span>
-</section>
+        <div style="margin-top:18px;color:#444;font-size:14px">
+          <strong>Address:</strong> 38 North Hill, Plymouth PL4 8ET<br>
+          <strong>Open:</strong> Closed now
+        </div>
+      </div>
 
-<section class="gallery">
-    <img src="https://images.unsplash.com/photo-1621605815972-697aa59e8c19" alt="Haircut">
-    <img src="https://images.unsplash.com/photo-1605732446800-3c0b2b74f08b" alt="Barber Fade">
-    <img src="https://images.unsplash.com/photo-1600180758890-6fef1f2f03b0" alt="Beard Trim">
-    <img src="https://images.unsplash.com/photo-1595428774229-efcbf2e197d3" alt="Hair Style">
-    <img src="https://images.unsplash.com/photo-1573497019410-5c009b3d77b4" alt="Hot Towel Shave">
-    <img src="https://images.unsplash.com/photo-1622227922682-6b7b7a6722a4" alt="Barber Chair">
-</section>
+      
+    </section>
 
-<section class="map">
-    <iframe src="https://www.google.com/maps/embed?pb=!4v1727800000000!6m8!1m7!1sCAoSLEFGMVFpcE1MdjMyZ1BBeDNhTUVuUkFHRGRJc1ZXdHdlZFFXQnMwVUlIU3hH!2m2!1d50.3778!2d-4.1427!3f0!4f0!5f0.7820865974627469" allowfullscreen></iframe>
-</section>
+    <section>
+      <h2 style="color:var(--green);margin-bottom:10px">Services</h2>
+      <div class="services">
+        <div class="service"><h4>Men's Haircut</h4><p>Classic and modern styles tailored to you.</p></div>
+        <div class="service"><h4>Skin Fade</h4><p>Sharp lines and clean fades for a professional finish.</p></div>
+        <div class="service"><h4>Hot Towel Shave</h4><p>Traditional hot towel shaves for a smooth result.</p></div>
+        <div class="service"><h4>Beard Shape-Up</h4><p>Precision beard trimming and styling.</p></div>
+        <div class="service"><h4>Kids' Cuts</h4><p>Friendly and patient service for young clients.</p></div>
+        <div class="service"><h4>Hair Design</h4><p>Custom designs to express yourself.</p></div>
+      </div>
+    </section>
 
-<footer>
-    <div class="socials">
-        <a href="https://www.facebook.com/classbarber38" target="_blank">📘 Facebook</a>
-        <a href="https://www.instagram.com/classbarber_38" target="_blank">📸 Instagram</a>
-    </div>
-    <p>© 2025 Class Barber | Created by AT</p>
-</footer>
+    <!-- Offers / Perks -->
+    <section>
+      <h2 style="color:var(--green);margin-bottom:10px">Offers</h2>
+      <div class="services">
+        <div class="service"><h4>🎓 Student Discount Available</h4><p>Show a valid student ID to save.</p></div>
+        <div class="service"><h4>🥤 Free Cold Drinks for Customers</h4><p>Complimentary refreshments while you wait.</p></div>
+        <div class="service"><h4>🅿️ Free Parking Nearby</h4><p>Up to 2 hours free parking close to the shop.</p></div>
+      </div>
+    </section>
 
+    <!-- About Section -->
+    <section>
+      <h2 style="color:var(--green);margin-bottom:10px">About</h2>
+      <div class="service" style="background:#fff">
+        <p style="margin:0;color:#333;font-size:15px">
+          Class Barber is a professional barbershop in Plymouth. Our barbers are fully trained in modern men’s hairstyles, fades, beard shape-ups, and more. We pride ourselves on excellent service and customer satisfaction.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2 style="color:var(--green);margin-bottom:10px">Gallery</h2>
+      <!-- Replace images by adding your own files into an `images/` folder
+           and updating the filenames below (cut1.jpg … cut6.jpg). Keep the
+           same sizes for best results. -->
+      <div class="gallery">
+        <img src="images/cut1.jpg" alt="Haircut 1">
+        <img src="images/cut2.jpg" alt="Haircut 2">
+        <img src="images/cut3.jpg" alt="Haircut 3">
+        <img src="images/cut4.jpg" alt="Haircut 4">
+        <img src="images/cut5.jpg" alt="Haircut 5">
+        <img src="images/cut6.jpg" alt="Haircut 6">
+      </div>
+    </section>
+
+    <section class="two-col">
+      <div class="reviews">
+        <h3 style="margin-top:0;color:var(--green)">What people say</h3>
+        <div style="margin:6px 0 12px;color:#444;font-weight:600">⭐ 100% Recommended by Our Happy Clients!</div>
+        <div class="review"><strong>Ben Lucas</strong><div style="font-size:13px;margin-top:6px">Great place and friendly 🙂</div></div>
+        <div class="review"><strong>Razvan Besleaga</strong><div style="font-size:13px;margin-top:6px">Mr H. Best barber in town. 5 stars barber shop.</div></div>
+        <div class="review"><strong>Lisa Tippet</strong><div style="font-size:13px;margin-top:6px">My son always gets a great cut here — very happy with the service.</div></div>
+      </div>
+
+      <div class="contact">
+        <h3 style="margin-top:0;color:var(--green)">Contact & Location</h3>
+        <p style="margin:0;font-size:14px">38 North Hill, Plymouth PL4 8ET</p>
+        <p style="margin:4px 0 0;font-size:14px">Phone: <a href="tel:+447899772323">07899 772323</a></p>
+        <p style="margin:4px 0 0;font-size:14px">Email: <a href="mailto:classbarber38@yahoo.com">classbarber38@yahoo.com</a></p>
+        <a class="btn btn-ghost" href="https://maps.app.goo.gl/aQ2LMBBqchMVTLkMA" target="_blank" rel="noopener">Open in Google Maps</a>
+
+        <div style="margin-top:12px">
+          <iframe
+            src="https://www.google.com/maps?q=38+North+Hill,+Plymouth+PL4+8ET,+UK&output=embed"
+            width="100%" height="220" style="border:0;border-radius:8px" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+
+        <div style="margin-top:12px">Find us on <a href="https://www.facebook.com/classbarber38" target="_blank" rel="noopener">Facebook</a></div>
+      </div>
+    </section>
+
+    <footer>
+      <div>Created by AT.</div>
+    </footer>
+  </div>
 </body>
 </html>
